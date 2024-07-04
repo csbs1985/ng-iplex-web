@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    line-height: 120%;
+    color: var(--color-txt);
+}
+
+body {
+    background-color: var(--color-base);
+    overflow-x: hidden;
+}
