@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppAbstract } from '../../app.abstract';
 
 @Component({
@@ -7,6 +7,4 @@ import { AppAbstract } from '../../app.abstract';
   imports: [],
   templateUrl: './logo.component.html'
 })
-export class LogoComponent extends AppAbstract {
-  @Input() width: number = 140;
-}
+export class LogoComponent extends AppAbstract { }

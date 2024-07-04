@@ -1,0 +1,37 @@
+<section>
+    <div class="keyboard">
+        <div class="keyboard-alpha">
+            @if (typeKeyboard === KeyboardEnum.LOWERCASE) {
+                @for (key of listKeyboardUppercase; track $index) {
+                    <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
+                }
+            } @else if (typeKeyboard === KeyboardEnum.NUMBERS) {
+                @for (key of listKeyboardNumbers; track $index) {
+                    <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
+                }
+            } @else {
+                @for (key of listKeyboardLowercase; track $index) {
+                    <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
+                }
+            }
+        </div>
+
+        <div class="keyboard-space">
+            <span class="keyboard-md keyboard-icon" (click)="toggleKeyboardType()">
+                {{ keyKeyboardType }}
+            </span>
+
+            <span class="keyboard-lg keyboard-icon" (click)="selectSpace()">
+                <img src="assets/icons/space.svg" (error)="_imageService.validateImage($event)">
+            </span>
+
+            <span class="keyboard-sm keyboard-icon" (click)="selectBackspace()">
+                <img src="assets/icons/backspace.svg" (error)="_imageService.validateImage($event)">
+            </span>
+
+            <span class="keyboard-sm keyboard-icon" (click)="selectClean()">
+                <img src="assets/icons/clean.svg" (error)="_imageService.validateImage($event)">
+            </span>
+        </div>
+    </div>
+</section>
