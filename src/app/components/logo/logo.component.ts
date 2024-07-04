@@ -5,8 +5,7 @@ import { AppAbstract } from '../../app.abstract';
   selector: 'iplex-logo',
   standalone: true,
   imports: [],
-  templateUrl: './logo.component.html',
-  styleUrl: './logo.component.scss'
+  templateUrl: './logo.component.html'
 })
 export class LogoComponent extends AppAbstract {
   @Input() width: number = 140;

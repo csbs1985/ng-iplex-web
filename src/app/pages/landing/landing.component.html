@@ -1,21 +1,22 @@
 <section class="w-screen h-screen p-8 flex flex-col justify-between items-center">
-    <div class="mt-48 mb-8">
+    <div class="mt-48 mb-8 puff-in-center">
         <iplex-logo [width]="200"></iplex-logo>
     </div>
 
-    <div class="flex flex-col gap-4">
-        <h2>✔️ {{ 'CANCEL_WHENEVER' | translate }}</h2>
-        <h2>✔️ {{ 'UNLIMITED_CONTENT' | translate }}</h2>
-        <h2>✔️ {{ 'WATCH_WHENEVER' | translate }}</h2>
-        <h2>✔️ {{ 'WATCH_PAUSE' | translate }}</h2>
-        <h2>✔️ {{ 'AFFORDABLE_PRICE' | translate }}</h2>
-    </div>
+    <menu class="flex flex-col gap-4 fade-in">
+        @for (item of listLandingTexts; track $index) {
+        <div class="flex gap-2">
+            <img src="assets/icons/check.svg">
+            <h2>{{ item | translate }}</h2>
+        </div>
+        }
+    </menu>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 fade-in">
         <button [routerLink]="['/login']">{{ 'LOGIN' | translate }}</button>
 
-        <button (click)="selectLanguageLogin()">{{ 'LANGUAGE_DISTRICT' | translate }}</button>
+        <button (click)="selectLanguageLanding()">{{ 'LANGUAGE_DISTRICT' | translate }}</button>
     </div>
 </section>
 
-<iplex-language-modal *ngIf="language" (languageLoginOutput)="selectLanguageLogin()"></iplex-language-modal>
+<iplex-language-modal *ngIf="language" (languageLoginOutput)="selectLanguageLanding()"></iplex-language-modal>

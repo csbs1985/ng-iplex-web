@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -8,13 +8,17 @@ import { LogoComponent } from '../../components/logo/logo.component';
 @Component({
   selector: 'iplex-landing',
   standalone: true,
-  imports: [LogoComponent, TranslateModule, RouterModule, LanguageModalComponent, NgIf],
+  imports: [LogoComponent, TranslateModule, RouterModule, LanguageModalComponent, NgIf, NgFor],
   templateUrl: './landing.component.html'
 })
 export class LandingComponent {
   protected language: boolean = false;
 
-  protected selectLanguageLogin(): void {
+  protected listLandingTexts: string[] = [
+    'CANCEL_WHENEVER', 'UNLIMITED_CONTENT', 'WATCH_WHENEVER', 'WATCH_PAUSE', 'AFFORDABLE_PRICE'
+  ];
+
+  protected selectLanguageLanding(): void {
     this.language = !this.language;
   }
 }
