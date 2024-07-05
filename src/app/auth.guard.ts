@@ -14,7 +14,7 @@ export class AuthGuard extends AppAbstract implements CanActivate {
             if (token) {
                 return true;
             } else {
-                this._router.navigate(['/login']);
+                this._router.navigate(['/landing']);
                 return false;
             }
         } else return false;

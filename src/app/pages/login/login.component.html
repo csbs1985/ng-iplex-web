@@ -3,5 +3,15 @@
         <iplex-logo></iplex-logo>
     </div>
 
-    <iplex-keyboard (keyboardOutput)="keyboardOutput($event)"></iplex-keyboard>
+    <div class="grid grid-cols-2">
+        <iplex-keyboard (keyboardOutput)="keyboardOutput($event)"></iplex-keyboard>
+
+        <p>
+            @if (text) {
+            <span class="text-[1vw]">{{ text }}</span>
+            } @else {
+            <span class="text-[1vw] color-placeholder">{{ 'SEARCH' | translate }}</span>
+            }
+        </p>
+    </div>
 </section>
