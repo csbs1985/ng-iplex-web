@@ -3,7 +3,6 @@ button {
     width: fit-content;
     height: var(--button-md);
     background-color: var(--color-element);
-    border-radius: var(--radius-sm);
     padding: 0 1.5rem;
     border: var(--border-md) solid var(--color-base);
     outline: var(--border-md) solid var(--color-base);
@@ -20,6 +19,10 @@ button:active,
 }
 
 .btn {
+    &-primary {
+        background-color: var(--color-primary);
+    }
+
     &-list {
         width: 100%;
         height: auto;
@@ -27,13 +30,11 @@ button:active,
         align-items: center;
         gap: 1rem;
         padding: .5rem 1rem;
-        border-radius: var(--radius-sm);
         border: var(--border-md) solid var(--color-base);
         outline: var(--border-md) solid var(--color-base);
 
         img {
-            width: 3rem;
-            border-radius: var(--radius-xs);
+            width: 2rem;
         }
 
         &:hover {

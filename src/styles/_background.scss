@@ -1,0 +1,11 @@
+.bg {
+    &-destak {
+        background-color: var(--color-primary);
+    }
+
+    &-banner-login {
+        background-image: url('../assets/images/banner-login.jpg');
+        background-size: cover;
+        filter: brightness(100%) contrast(100%) opacity(0.5) drop-shadow(0 0 0 var(--color-primary));
+    }
+}

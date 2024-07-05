@@ -3,12 +3,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 
 @Component({
-  selector: 'iplex-language-modal',
+  selector: 'iplex-language-list',
   standalone: true,
   imports: [TranslateModule],
-  templateUrl: './language-modal.component.html'
+  templateUrl: './language-list.component.html'
 })
-export class LanguageModalComponent extends AppAbstract {
+export class LanguageListComponent extends AppAbstract {
   @Output() languageLoginOutput = new EventEmitter();
 
   protected closeLaguangeLogin(): void {

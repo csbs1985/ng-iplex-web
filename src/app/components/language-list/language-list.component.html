@@ -1,0 +1,15 @@
+<section class="flex flex-col gap-8">
+    <h3>{{ 'SELECT_LANGUAGE' | translate }}</h3>
+
+    <menu class="w-fit flex flex-col gap-2">
+        @for (item of _languageService.listLanguage; track $index) {
+        <button class="btn-list" [class.btn-list-active]="_languageService.languageSelected === item.code"
+            (click)="_languageService.selectLanguage(item.code); closeLaguangeLogin()">
+
+            <img [src]="item.icon" (error)="_imageService.validateImage($event)">
+
+            <p>{{item.language}}</p>
+        </button>
+        }
+    </menu>
+</section>
