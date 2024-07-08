@@ -4,37 +4,22 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
 import { KeyboardComponent } from '../../components/keyboard/keyboard.component';
-import { LanguageListComponent } from '../../components/language-list/language-list.component';
+import { LoadingComponent } from '../../components/loading/loading.component';
 import { LogoComponent } from '../../components/logo/logo.component';
+import { FormLoginComponent } from './form-login/form-login.component';
+import { InitLoginComponent } from './init-login/init-login.component';
+import { LanguageLoginComponent } from './language-login/language-login.component';
 
 @Component({
   selector: 'iplex-login',
   standalone: true,
-  imports: [NgIf, LogoComponent, KeyboardComponent, TranslateModule, RouterModule, LanguageListComponent],
+  imports: [NgIf, InitLoginComponent, LoadingComponent, LogoComponent, KeyboardComponent, TranslateModule, RouterModule, LanguageLoginComponent, FormLoginComponent],
   templateUrl: './login.component.html'
 })
 export class LoginComponent extends AppAbstract {
-  protected readonly minStageLogin: number = 0;
-  protected readonly maxStageLogin: number = 2;
-
-  protected btnText: string = 'CONFIRM';
   protected text: string = '';
-  protected stageLogin: number = 0;
-
-  protected listLandingTexts: string[] = [
-    'CANCEL_WHENEVER', 'UNLIMITED_CONTENT', 'WATCH_WHENEVER', 'WATCH_PAUSE', 'AFFORDABLE_PRICE'
-  ];
 
   protected keyboardOutput(event: string): void {
     this.text = event;
-  }
-
-  protected confirmLogin(): void {
-    if (this.stageLogin < this.maxStageLogin) this.stageLogin++;
-    console.log(this.stageLogin);
-  }
-
-  protected login(): void {
-    console.log('CONFIRM');
   }
 }

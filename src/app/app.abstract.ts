@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { SubSink } from "subsink";
 import { ImageService } from "./services/image.service";
 import { LanguageService } from "./services/language.service";
+import { LoginService } from "./services/login.service";
 
 @Component({
     template: ''
@@ -14,6 +15,7 @@ export abstract class AppAbstract implements OnDestroy {
     protected _router = inject(Router);
 
     protected _languageService = inject(LanguageService);
+    protected _loginService = inject(LoginService);
     protected _imageService = inject(ImageService);
 
     protected _subSink = new SubSink();

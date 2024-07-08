@@ -1,11 +1,20 @@
 {
+    "ADD_ACCOUNT": "Let's add your account",
     "AFFORDABLE_PRICE": "For an affordable price",
     "CANCEL_WHENEVER": "Cancel whenever you want",
-    "LANGUAGE_DISTRICT": "English",
     "CONFIRM": "Confirm",
+    "LANGUAGE_DISTRICT": "English",
+    "LOGIN": "Login",
+    "MANDATOTY_PASSWORD": "Mandatory password field",
+    "MANDATOTY_USER": "Mandatory user field",
+    "PASSWORD": "Password",
+    "PASSWORD_NOT_FOUND": "Password not found",
     "PREVIOUS": "Previous",
+    "PROCESSING": "Please wait, we are processing",
     "SELECT_LANGUAGE": "Select default language",
     "UNLIMITED_CONTENT": "Unlimited content",
+    "USER": "User",
+    "USER_NOT_FOUND": "User not found",
     "WATCH_PAUSE": "Watch, pause and restart",
     "WATCH_WHENEVER": "Watch whenever you want"
 }

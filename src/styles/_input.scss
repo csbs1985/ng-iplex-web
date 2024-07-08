@@ -1,0 +1,32 @@
+input {
+    cursor: pointer;
+    width: fit-content;
+    min-width: 10rem;
+    height: var(--button-md);
+    background-color: var(--color-element);
+    padding: 0 1.5rem;
+    border-radius: var(--radius-sm);
+    border: var(--border-md) solid var(--color-base);
+    outline: var(--border-md) solid var(--color-base);
+    font-weight: bold;
+
+    ::placeholder {
+        color: var(--color-placeholder);
+    }
+
+    &:hover,
+    &:active {
+        border-color: var(--color-primary);
+    }
+}
+
+.input {
+    &-top {
+        border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+        margin-bottom: 0.24rem;
+    }
+
+    &-bottom {
+        border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    }
+}

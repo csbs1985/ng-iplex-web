@@ -1,0 +1,16 @@
+<section class="h-full flex flex-col flex-1 justify-between">
+    <div class="flex flex-col flex-1 gap-8 justify-center">
+        <h1>Welcome to iPlex</h1>
+
+        <menu class="flex flex-col gap-4">
+            @for (item of listLandingTexts; track $index) {
+            <div class="flex gap-2">
+                <img src="assets/icons/check.svg" class="w-8" (error)="_imageService.validateImage($event)">
+                <h2>{{ item | translate }}</h2>
+            </div>
+            }
+        </menu>
+    </div>
+
+    <button (click)="_loginService.nextStageLogin()">{{ 'CONFIRM' | translate }}</button>
+</section>

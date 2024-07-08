@@ -1,6 +1,6 @@
 import { Injectable, inject } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { LanguageEnum } from "../enums/language.enum";
+import { ELanguage } from "../enums/language.enum";
 
 @Injectable({
     providedIn: 'root'
@@ -8,43 +8,43 @@ import { LanguageEnum } from "../enums/language.enum";
 export class LanguageService {
     protected _translateService = inject(TranslateService);
 
-    languageSelected = LanguageEnum.ENGLISH;
+    languageSelected = ELanguage.ENGLISH;
 
     listLanguage = [
         {
             language: 'English',
-            code: LanguageEnum.ENGLISH,
+            code: ELanguage.ENGLISH,
             icon: 'assets/icons/us.svg'
         },
         {
             language: 'Español',
-            code: LanguageEnum.SPANISH,
+            code: ELanguage.SPANISH,
             icon: 'assets/icons/es.svg'
         },
         {
             language: 'Deutsch',
-            code: LanguageEnum.GERMAN,
+            code: ELanguage.GERMAN,
             icon: 'assets/icons/de.svg'
         },
         {
             language: 'Français',
-            code: LanguageEnum.FRANCE,
+            code: ELanguage.FRANCE,
             icon: 'assets/icons/fr.svg'
         },
         {
             language: 'Italiano',
-            code: LanguageEnum.ITALIAN,
+            code: ELanguage.ITALIAN,
             icon: 'assets/icons/it.svg'
         },
         {
             language: 'Português',
-            code: LanguageEnum.PORTUGUESE,
+            code: ELanguage.PORTUGUESE,
             icon: 'assets/icons/br.svg'
         }
     ];
 
     initLanguage(): void {
-        let lang = LanguageEnum.ENGLISH;
+        let lang = ELanguage.ENGLISH;
 
         if (typeof localStorage !== 'undefined') {
             const defaultLange = localStorage.getItem('language');
@@ -54,7 +54,7 @@ export class LanguageService {
         this.setLanguage(lang);
     }
 
-    setLanguage(lang: LanguageEnum): void {
+    setLanguage(lang: ELanguage): void {
         this._translateService.setDefaultLang(lang);
         this._translateService.use(lang);
 
@@ -63,7 +63,7 @@ export class LanguageService {
         }
     }
 
-    selectLanguage(lang: LanguageEnum): void {
+    selectLanguage(lang: ELanguage): void {
         this.languageSelected = lang;
         this.setLanguage(lang);
     }

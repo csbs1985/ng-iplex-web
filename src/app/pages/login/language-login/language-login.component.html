@@ -1,0 +1,19 @@
+<section class="w-full h-full flex flex-col flex-1 justify-between">
+    <div class="flex flex-col flex-1 gap-8 justify-center">
+        <h3>{{ 'SELECT_LANGUAGE' | translate }}</h3>
+
+        <menu class="max-w-[500px] flex flex-col gap-2">
+            @for (item of _languageService.listLanguage; track $index) {
+            <button class="btn-list" [class.btn-list-active]="_languageService.languageSelected === item.code"
+                (click)="_languageService.selectLanguage(item.code); closeLaguangeLogin()">
+
+                <img [src]="item.icon" (error)="_imageService.validateImage($event)">
+
+                <p>{{item.language}}</p>
+            </button>
+            }
+        </menu>
+    </div>
+
+    <button (click)="_loginService.nextStageLogin()">{{ 'CONFIRM' | translate }}</button>
+</section>

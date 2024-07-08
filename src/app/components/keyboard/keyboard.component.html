@@ -1,11 +1,11 @@
 <section>
     <div class="keyboard">
         <div class="keyboard-alpha">
-            @if (typeKeyboard === KeyboardEnum.LOWERCASE) {
+            @if (typeKeyboard === EKeyboard.LOWERCASE) {
                 @for (key of listKeyboardUppercase; track $index) {
                     <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
                 }
-            } @else if (typeKeyboard === KeyboardEnum.NUMBERS) {
+            } @else if (typeKeyboard === EKeyboard.NUMBERS) {
                 @for (key of listKeyboardNumbers; track $index) {
                     <span class="keyboard-sm text-lg flex justify-center items-center" (click)="selectKey(key)">{{ key }}</span>
                 }

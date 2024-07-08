@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../app.abstract';
-import { KeyboardEnum } from '../../enums/keyboard.enum';
+import { EKeyboard } from '../../enums/keyboard.enum';
 
 @Component({
   selector: 'iplex-keyboard',
@@ -16,13 +16,13 @@ export class KeyboardComponent extends AppAbstract implements OnInit {
 
   @Output() keyboardOutput = new EventEmitter<string>();
 
-  KeyboardEnum: typeof KeyboardEnum = KeyboardEnum;
+  EKeyboard: typeof EKeyboard = EKeyboard;
 
   protected listKeyboardLowercase: string[] = [];
   protected listKeyboardNumbers: string[] = [];
   protected listKeyboardUppercase: string[] = [];
 
-  protected typeKeyboard: KeyboardEnum = KeyboardEnum.UPPERCASE;
+  protected typeKeyboard: EKeyboard = EKeyboard.UPPERCASE;
 
   ngOnInit(): void {
     this.generateKeys();
@@ -60,22 +60,22 @@ export class KeyboardComponent extends AppAbstract implements OnInit {
 
   toggleKeyboardType(): void {
     switch (this.typeKeyboard) {
-      case KeyboardEnum.UPPERCASE:
-        this.typeKeyboard = KeyboardEnum.LOWERCASE;
+      case EKeyboard.UPPERCASE:
+        this.typeKeyboard = EKeyboard.LOWERCASE;
         break;
-      case KeyboardEnum.LOWERCASE:
-        this.typeKeyboard = KeyboardEnum.NUMBERS;
+      case EKeyboard.LOWERCASE:
+        this.typeKeyboard = EKeyboard.NUMBERS;
         break;
       default:
-        this.typeKeyboard = KeyboardEnum.UPPERCASE;
+        this.typeKeyboard = EKeyboard.UPPERCASE;
     }
   }
 
   get keyKeyboardType(): string {
     switch (this.typeKeyboard) {
-      case KeyboardEnum.UPPERCASE:
+      case EKeyboard.UPPERCASE:
         return 'abc';
-      case KeyboardEnum.LOWERCASE:
+      case EKeyboard.LOWERCASE:
         return '123';
       default:
         return 'ABC';

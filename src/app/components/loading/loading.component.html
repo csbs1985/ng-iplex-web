@@ -1,0 +1,11 @@
+<section class="modal">
+    <main>
+        <img src="assets/icons/logo.svg" (error)="_imageService.validateImage($event)" class="w-[140px]">
+
+        <h3>{{ 'PROCESSING' | translate }}</h3>
+
+        <p *ngIf="text">{{ text | translate }}</p>
+
+        <span class="loading w-[160px]"></span>
+    </main>
+</section>

@@ -1,0 +1,23 @@
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="h-full flex flex-col flex-1 justify-between">
+    <div class="flex flex-col flex-1 gap-8 justify-center">
+        <h3>{{ 'ADD_ACCOUNT' | translate }}</h3>
+
+        <div [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="w-[500px] flex flex-col">
+            <input type="text" formControlName="user" placeholder="{{ 'USER' | translate }}" class="input-top w-full">
+
+            <input type="password" formControlName="password" placeholder="{{ 'PASSWORD' | translate }}"
+                class="input-bottom mb-4 w-full">
+
+            <p *ngIf="subject && f['user'].errors" class="txt-error mb-4">{{ 'MANDATOTY_USER' | translate }}</p>
+            <p *ngIf="subject && f['password'].errors" class="txt-error mb-4">{{ 'MANDATOTY_PASSWORD' | translate }}</p>
+            <p *ngIf="subject && errorUser" class="txt-error mb-4">{{ 'USER_NOT_FOUND' | translate }}</p>
+            <p *ngIf="subject && errorPasswrod" class="txt-error mb-4">{{ 'PASSWORD_NOT_FOUND' | translate }}</p>
+        </div>
+    </div>
+
+    <div class="flex gap-4">
+        <button (click)="_loginService.previousStageLogin()">{{ 'PREVIOUS' | translate }}</button>
+
+        <button>{{ 'LOGIN' | translate }}</button>
+    </div>
+</form>

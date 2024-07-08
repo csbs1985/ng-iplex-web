@@ -1,39 +1,26 @@
 <section class="w-screen h-screen flex relative bg-destak">
     <div class="w-5/6 h-5/6 max-w-[1600px] max-h-[1024px] m-auto flex bg-base rounded-2xl shadow-2xl">
         <div class="w-1/2 h-full flex justify-center items-center">
-            @if (stageLogin === 0) {
+            @if (_loginService.stageLogin === 0) {
             <iplex-logo class="w-[300px] scale-in-center"></iplex-logo>
-            } @else if(stageLogin === 1){
-            <img src="assets/images/world-map.png" class="scale-in-center" (error)="_imageService.validateImage($event)">
-            } @else if(stageLogin === 2){
+            } @else if(_loginService.stageLogin === 1){
+            <img src="assets/images/world-map.png" class="scale-in-center"
+                (error)="_imageService.validateImage($event)">
+            } @else if(_loginService.stageLogin === 2){
             <img src="assets/images/login.png" class="scale-in-center" (error)="_imageService.validateImage($event)">
             }
         </div>
 
-        <div class="h-full flex flex-col flex-1 p-16 pl-0">
-            <div class="flex flex-col gap-8 flex-1 justify-center">
-
-                @if (stageLogin === 0) {
-                <h1 class="slide-in-right">Welcome to iPlex</h1>
-
-                <menu class="flex flex-col gap-4 slide-in-right">
-                    @for (item of listLandingTexts; track $index) {
-                    <div class="flex gap-2">
-                        <img src="assets/icons/check.svg" class="w-8" (error)="_imageService.validateImage($event)">
-                        <h2>{{ item | translate }}</h2>
-                    </div>
-                    }
-                </menu>
-                } @else if(stageLogin === 1){
-                <div class="slide-in-right">
-                    <iplex-language-list class="slide-in-right"></iplex-language-list>
-                </div>
-                }
-            </div>
-
-            <div class="flex items-center gap-4 slide-in-right">
-                <button (click)="confirmLogin()">{{ 'CONFIRM' | translate }}</button>
-            </div>
+        <div class="flex p-16 pl-0 flex-1">
+            @if (_loginService.stageLogin === 0) {
+            <iplex-init-login class="slide-in-right"></iplex-init-login>
+            } @else if(_loginService.stageLogin === 1){
+            <iplex-language-login class="slide-in-right w-full"></iplex-language-login>
+            } @else if(_loginService.stageLogin === 2){
+            <iplex-form-login class="slide-in-right"></iplex-form-login>
+            }
         </div>
     </div>
 </section>
+
+<iplex-loading *ngIf="_loginService.loading"></iplex-loading>
