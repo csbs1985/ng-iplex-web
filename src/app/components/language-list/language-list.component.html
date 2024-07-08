@@ -1,7 +1,7 @@
-<section class="flex flex-col gap-8">
+<section class=" w-full flex flex-col gap-8">
     <h3>{{ 'SELECT_LANGUAGE' | translate }}</h3>
 
-    <menu class="w-fit flex flex-col gap-2">
+    <menu class="max-w-[500px] flex flex-col gap-2">
         @for (item of _languageService.listLanguage; track $index) {
         <button class="btn-list" [class.btn-list-active]="_languageService.languageSelected === item.code"
             (click)="_languageService.selectLanguage(item.code); closeLaguangeLogin()">

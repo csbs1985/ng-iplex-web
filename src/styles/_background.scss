@@ -1,6 +1,14 @@
 .bg {
+    &-base {
+        background-color: var(--color-base);
+    }
+
     &-destak {
         background-color: var(--color-primary);
+    }
+
+    &-element {
+        background-color: var(--color-element);
     }
 
     &-banner-login {
