@@ -1,0 +1,25 @@
+<section class="w-screen h-screen flex flex-col p-8">
+    <div class="flex flex-col justify-center items-center flex-1 gap-8">
+        <iplex-logo class="w-[140px]"></iplex-logo>
+
+        <h3>{{ 'WHOS_WATCHING' | translate }}</h3>
+
+        <menu class="flex gap-8">
+            @for(item of listUsers; track item){
+            <div (click)="selectUser(item)" class="users" [class.users-active]="item === userSelected">
+                <div>
+                    <img *ngIf="item.avatar" (error)="_imageService.validateImage($event)" [src]="item.avatar">
+                </div>
+
+                <h3>{{ item.name }}</h3>
+            </div>
+            }
+        </menu>
+    </div>
+
+    <div class="flex gap-4 justify-center">
+        <button [routerLink]="['/settings']">{{ 'CREATE_USER' | translate }}</button>
+
+        <button (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
+    </div>
+</section>

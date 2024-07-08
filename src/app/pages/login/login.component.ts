@@ -11,7 +11,6 @@ import { InitLoginComponent } from './init-login/init-login.component';
 import { LanguageLoginComponent } from './language-login/language-login.component';
 
 @Component({
-  selector: 'iplex-login',
   standalone: true,
   imports: [NgIf, InitLoginComponent, LoadingComponent, LogoComponent, KeyboardComponent, TranslateModule, RouterModule, LanguageLoginComponent, FormLoginComponent],
   templateUrl: './login.component.html'

@@ -3,15 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppAbstract } from '../../../app.abstract';
+import { KeyboardComponent } from '../../../components/keyboard/keyboard.component';
+import { EInputLogin } from '../../../enums/input-login.enum';
 import { ILogin } from '../../../models/login.interface';
 
 @Component({
   selector: 'iplex-form-login',
   standalone: true,
-  imports: [TranslateModule, NgIf, ReactiveFormsModule],
+  imports: [TranslateModule, NgIf, ReactiveFormsModule, KeyboardComponent],
   templateUrl: './form-login.component.html'
 })
 export class FormLoginComponent extends AppAbstract implements OnInit {
+  EInputLogin: typeof EInputLogin = EInputLogin;
+
   protected formLogin!: FormGroup;
 
   protected errorUser: boolean = false;
@@ -20,6 +24,12 @@ export class FormLoginComponent extends AppAbstract implements OnInit {
   private login!: ILogin;
 
   subject: boolean = false;
+
+  inputType!: EInputLogin;
+
+  private inputUser: string = "";
+  private inputPassword: string = "";
+
 
   ngOnInit(): void {
     this.createForm();
@@ -32,13 +42,33 @@ export class FormLoginComponent extends AppAbstract implements OnInit {
     })
   }
 
+  protected onFocus(focus: EInputLogin): void {
+    this.inputType = focus;
+
+    if (this.inputType === EInputLogin.USER) {
+      // this.inputPassword = 
+    } else {
+      
+    }
+  }
+  
+  protected keyboardOutput(input: string): void {
+    if (this.inputType === EInputLogin.USER) {
+      this.inputUser = input;
+      this.formLogin.get('user')?.setValue(input);
+    } else if (this.inputType === EInputLogin.PASSWORD) {
+      this.inputPassword = input;
+      this.formLogin.get('password')?.setValue(input);
+    }
+  }
+
   protected onSubmit(): void {
     this.subject = true;
 
     if (this.formLogin.valid) {
       try {
         this._loginService.loading = true;
-        // this.userValidator();
+        this.userValidator();
       } catch (error) {
 
       }

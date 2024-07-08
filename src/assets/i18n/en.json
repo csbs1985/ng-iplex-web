@@ -1,10 +1,12 @@
 {
-    "ADD_ACCOUNT": "Let's add your account",
     "AFFORDABLE_PRICE": "For an affordable price",
     "CANCEL_WHENEVER": "Cancel whenever you want",
     "CONFIRM": "Confirm",
+    "CREATE_USER": "Create user",
     "LANGUAGE_DISTRICT": "English",
+    "LETS_ADD_ACCOUNT": "Let's add your account",
     "LOGIN": "Login",
+    "LOGOUT": "Logout",
     "MANDATOTY_PASSWORD": "Mandatory password field",
     "MANDATOTY_USER": "Mandatory user field",
     "PASSWORD": "Password",
@@ -16,5 +18,6 @@
     "USER": "User",
     "USER_NOT_FOUND": "User not found",
     "WATCH_PAUSE": "Watch, pause and restart",
-    "WATCH_WHENEVER": "Watch whenever you want"
+    "WATCH_WHENEVER": "Watch whenever you want",
+    "WHOS_WATCHING": "Who's Watching?"
 }
