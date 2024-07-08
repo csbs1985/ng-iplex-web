@@ -11,9 +11,13 @@
         background-color: var(--color-element);
     }
 
-    &-banner-login {
-        background-image: url('../assets/images/banner-login.jpg');
+    &-banner {
+        width: 100vw;
+        height: 80vh;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(15, 15, 15, 1)), 
+            url('https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/1364/john-wick-recap-relembre-todos-os-filmes-da-franquia-e4e2272fee9604.jpg');
         background-size: cover;
-        filter: brightness(100%) contrast(100%) opacity(0.5) drop-shadow(0 0 0 var(--color-primary));
+        background-position: center;
+        z-index: 0;
     }
 }

@@ -48,4 +48,14 @@ button:active,
             background-color: var(--color-primary);
         }
     }
+
+    &-play {
+        background-image: url('../assets/icons/play.svg');
+        background-repeat: no-repeat;
+        background-position: 1rem center;
+        background-size: 2rem;
+        background-color: var(--color-primary);
+        outline: var(--border-md) solid transparent;
+        padding-left: 3rem;
+    }
 }
