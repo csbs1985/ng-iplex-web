@@ -1,0 +1,33 @@
+<menu class="h-screen w-[324px] px-4 py-8 flex flex-col justify-between top-0 left-0">
+    <nav>
+        <ul class="mb-4">
+            <li [routerLink]="['/users']">
+                <img class="avatar w-[36px] h-[36px]" [src]="user.avatar" (error)="_imageService.validateImage($event)">
+
+                <p>{{ user.name }}</p>
+            </li>
+        </ul>
+
+        <ul>
+            @for (item of listMenuMainTop; track $index) {
+            <li [routerLink]="item.route" [routerLinkActive]="'nav-active'">
+                <img [src]="item.icon" (error)="_imageService.validateImage($event)">
+
+                <p>{{ item.text | translate }}</p>
+            </li>
+            }
+        </ul>
+    </nav>
+
+    <nav>
+        <ul>
+            @for (item of listMenuMainBottom; track $index) {
+            <li [routerLink]="item.route" [routerLinkActive]="'nav-active'">
+                <img [src]="item.icon" (error)="_imageService.validateImage($event)">
+
+                <p>{{ item.text | translate }}</p>
+            </li>
+            }
+        </ul>
+    </nav>
+</menu>
