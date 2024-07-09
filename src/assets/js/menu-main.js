@@ -1,11 +1,12 @@
 function fixDivOnScroll() {
     const div = document.getElementById('menu-main');
-    const divTop = div.offsetTop;
     const scrollPosition = window.scrollY;
-  
-    if (scrollPosition >= divTop) {
+    const viewportHeight = window.innerHeight;
+
+    if (scrollPosition > viewportHeight) {
         div.style.position = 'fixed';
         div.style.top = '0px';
+        div.style.left = '0px';
     } else {
         div.style.position = 'relative';
     }
