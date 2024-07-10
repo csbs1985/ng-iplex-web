@@ -1,0 +1,27 @@
+<section class="w-screen h-screen flex flex-col justify-center items-center p-16">
+    <div class="flex flex-col items-center gap-8">
+        <iplex-logo class="w-[200px]"></iplex-logo>
+
+        @if(!isErrorFetch){
+        <div class="flex flex-col justify-center items-center gap-8">
+            <h2 class="m-0">{{ 'PROCESSING' | translate }}</h2>
+
+            <p>{{ 'UPDATING_LIST' | translate }}</p>
+
+            <span class="loading w-[300px]"></span>
+        </div>
+        } @else {
+        <div class="flex flex-col gap-4 justify-center items-center">
+            <h2 class="m-0">{{ 'UNABLE_UPDATE' | translate }}</h2>
+        </div>
+        }
+
+        @if (isErrorFetch) {
+        <div class="flex gap-4 justify-center items-center mb-16">
+            <button (click)="fetchPlaylistData()">{{ 'TRY_AGAIN' | translate }}</button>
+
+            <button (click)="_loginService.logout()">{{ 'LOGOUT' | translate }}</button>
+        </div>
+        }
+    </div>
+</section>

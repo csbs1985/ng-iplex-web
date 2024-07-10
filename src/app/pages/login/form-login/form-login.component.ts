@@ -14,7 +14,7 @@ import { ILogin } from '../../../models/login.interface';
   templateUrl: './form-login.component.html'
 })
 export class FormLoginComponent extends AppAbstract implements OnInit {
-  EInputLogin: typeof EInputLogin = EInputLogin;
+  protected EInputLogin: typeof EInputLogin = EInputLogin;
 
   protected formLogin!: FormGroup;
 
@@ -23,13 +23,12 @@ export class FormLoginComponent extends AppAbstract implements OnInit {
 
   private login!: ILogin;
 
-  subject: boolean = false;
+  protected subject: boolean = false;
 
-  inputType!: EInputLogin;
+  protected inputType!: EInputLogin;
 
   private inputUser: string = "";
   private inputPassword: string = "";
-
 
   ngOnInit(): void {
     this.createForm();
@@ -48,10 +47,10 @@ export class FormLoginComponent extends AppAbstract implements OnInit {
     if (this.inputType === EInputLogin.USER) {
       // this.inputPassword = 
     } else {
-      
+
     }
   }
-  
+
   protected keyboardOutput(input: string): void {
     if (this.inputType === EInputLogin.USER) {
       this.inputUser = input;
@@ -116,7 +115,7 @@ export class FormLoginComponent extends AppAbstract implements OnInit {
       localStorage.setItem('login', JSON.stringify(this.login));
     }
 
-    this._router.navigate(['/users']);
+    this._loginService.nextStageLogin();
   }
 
   get f(): { [key: string]: any } {

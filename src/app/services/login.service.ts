@@ -9,7 +9,7 @@ export class LoginService {
     protected _router = inject(Router);
 
     readonly minStageLogin: number = 0;
-    readonly maxStageLogin: number = 2;
+    readonly maxStageLogin: number = 3;
 
     text: string = '';
     stageLogin: number = 0;

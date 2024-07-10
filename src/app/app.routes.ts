@@ -13,6 +13,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/login/login.component').then(p => p.LoginComponent)
     },
     {
+        path: 'recharge',
+        loadComponent: () => import('./pages/recharge/recharge.component').then(p => p.RechargeComponent),
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'users',
         loadComponent: () => import('./pages/users/users.component').then(p => p.UsersComponent),
         canActivate: [AuthGuard]

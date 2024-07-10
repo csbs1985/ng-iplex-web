@@ -2,7 +2,7 @@
     <div class="bg-banner"></div>
 
     <div class="w-screen h-[100vh] flex flex-col justify-end p-16 pb-4 absolute top-0 left-0 z-10">
-        <iplex-logo class="w-[300px] mb-8 txt-shadow"></iplex-logo>
+        <iplex-logo class="w-[200px] mb-8 txt-shadow"></iplex-logo>
 
         <h3 class="uppercase mb-0 txt-shadow">{{ 'WATCH_NOW' | translate}}</h3>
 
@@ -11,7 +11,7 @@
         <button class="btn-play">{{ 'WATCH' | translate }}</button>
 
         <div class="w-full flex justify-center mt-16">
-            <img src="assets/icons/stat.svg" class="w-10 heartbeat">
+            <img src="assets/icons/stat.svg" (error)="_imageService.validateImage($event)" class="w-10 slide-bottom">
         </div>
     </div>
 </section>

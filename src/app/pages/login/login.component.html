@@ -4,10 +4,11 @@
             @if (_loginService.stageLogin === 0) {
             <iplex-logo class="w-[300px] scale-in-center"></iplex-logo>
             } @else if(_loginService.stageLogin === 1){
-            <img src="assets/images/world-map.png" class="scale-in-center"
-                (error)="_imageService.validateImage($event)">
+            <img src="assets/images/world-map.png" class="scale-in-center" (error)="_imageService.validateImage($event)">
             } @else if(_loginService.stageLogin === 2){
             <img src="assets/images/login.png" class="scale-in-center" (error)="_imageService.validateImage($event)">
+            } @else if(_loginService.stageLogin === 3){
+            <img src="assets/images/user.png" class="scale-in-center" (error)="_imageService.validateImage($event)">
             }
         </div>
 
@@ -18,6 +19,8 @@
             <iplex-language-login class="slide-in-right w-full"></iplex-language-login>
             } @else if(_loginService.stageLogin === 2){
             <iplex-form-login class="slide-in-right"></iplex-form-login>
+            } @else if(_loginService.stageLogin === 3){
+            <iplex-user-login></iplex-user-login>
             }
         </div>
     </div>
